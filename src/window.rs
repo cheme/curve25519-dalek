@@ -76,7 +76,8 @@ where
 
 impl<T: Copy + Default> Default for $name<T> {
     fn default() -> $name<T> {
-        $name([T::default(); $size])
+			unimplemented!()
+      //  $name([T::default(); $size])
     }
 }
 
@@ -94,11 +95,14 @@ impl<T: Debug> Debug for $name<T> {
 
 impl<'a> From<&'a EdwardsPoint> for $name<ProjectiveNielsPoint> {
     fn from(P: &'a EdwardsPoint) -> Self {
+			unimplemented!()
+				/*
         let mut points = [P.to_projective_niels(); $size];
         for j in $conv_range {
             points[j + 1] = (P + &points[j]).to_extended().to_projective_niels();
         }
         $name(points)
+				*/
     }
 }
 
